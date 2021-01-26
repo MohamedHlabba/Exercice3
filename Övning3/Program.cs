@@ -28,7 +28,7 @@ namespace Övning3
                 System.Console.WriteLine("***************************************************************");
             }
 
-            foreach (String res in personHandler.FetchByName("Hlabba"))
+            foreach (String res in personHandler.FetchByName("Hlabba")) 
             {
                // var res = personHandler.FetchByName("Be");
                 System.Console.WriteLine(res);
