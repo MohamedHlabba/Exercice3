@@ -33,18 +33,68 @@ namespace Övning3
                
                 Console.WriteLine(res);
             }
+            //////////////////////////////////////////////////////////////////////
 
 
+
+            List<Animal> animals = new List<Animal>();
+
+            Bird bird = new Bird();
+            bird.Namn = "Canarrii";
+            bird.Vikt =0.004 ;
+            bird.Ålder = 1;
+            bird.WingSpan = " grå wingspan";
+
+            Flamingo flamingo = new Flamingo();
+            flamingo.Namn = "";
+            flamingo.Vikt = 5;
+            flamingo.Ålder = 1;
+            flamingo.WingSpan = "Yellow";
+            flamingo.Domän = "South Africa";
+            
+
+
+
+            Wolf wolf = new Wolf();
+            wolf.Namn = "Lobbo";
+            wolf.Vikt = 70;
+            wolf.Ålder = 3;
+            wolf.Size = "Big";
+            
             Dog dog = new Dog();
             dog.Race= "Labrador";
             dog.Namn="Layka";
             dog.Vikt = 35;
             dog.Ålder = 2;
 
-            var t = dog.Stats();
-            System.Console.WriteLine(t);
+            animals.Add(dog);
+            animals.Add(wolf);
+            animals.Add(flamingo);
+            animals.Add(bird);
+
+            //public List<String> affichemplyee()
+            //{
+            //    List<String> result = new List<String>();
+            //    foreach (Employe em in employes)
+            //    {
+            //        result.Add("employe name " + em.name + " employee salary : " + em.Salary);
+            //    }
+            //    return result;
+            //}
 
 
+            foreach (var resss in animals)
+            {
+                Console.WriteLine(resss.ToString());
+
+            }
+
+
+
+            //var t = dog.Stats();
+            //System.Console.WriteLine(t);
+
+////////////////////////////////////////////////////////////
             
 
             //Console.WriteLine("Enter person Firstname");

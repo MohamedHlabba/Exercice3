@@ -128,6 +128,11 @@ namespace Övning3
         private string halspåse;
         public string Halspåse { get; set; }
 
+        public override string Stats()
+        {
+            return base.Stats()+("Halspåse");
+        }
+
     }
 
     class Flamingo​ : Bird
@@ -135,6 +140,11 @@ namespace Övning3
     {
         private string domän;
         public string Domän { get; set; }
+
+        public override string Stats()
+        {
+            return base.Stats()+("Domän :");
+        }
 
     }
 
@@ -144,6 +154,11 @@ namespace Övning3
     {
         private string family;
         public string Family { get; set; }
+
+        public override string Stats()
+        {
+            return base.Stats()+("Family");
+        }
 
     }
 
