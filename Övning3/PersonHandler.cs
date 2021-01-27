@@ -31,7 +31,7 @@ namespace Övning3
         public List<Person> SavePerson(Person p)
             
         {
-            //List<Person> personers = new List<Person>();
+            
             personers.Add(p);
            
             return personers;
@@ -40,7 +40,7 @@ namespace Övning3
         public List<String>GetAllPersons()
         {
             List<String> result = new List<String>();
-            //List<Person>persons= new List<Person>();
+           
                 foreach (Person em in personers)
                 {
                     result.Add("[First Name] :" +em.FName +" [last name] : "+em.LName +" [Age] : "+em.Age + " [Height] : "+em.Height+" [Weight] : "+em.Weight);
@@ -48,23 +48,7 @@ namespace Övning3
                 return result;
             }
 
-        //public Person FetchByName(List<Person> personers, string lname)
-        //{
-        //    //Person pp = new Person();
-        //    foreach (Person pp in personers)
-        //    {
-        //        if (pp.LName == lname)
-        //        {
-
-        //            Console.WriteLine(p.LName);
-
-        //        }
-        //        Console.WriteLine("Name doesn't match ");
-
-        //    }
-
-        //    return pp;
-        //}
+       
         public List<String> FetchByName(string lname)
         {
             List<String> res = new List<String>();
