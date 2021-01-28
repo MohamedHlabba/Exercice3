@@ -25,7 +25,7 @@ namespace Övning3
             foreach (String resultat in personHandler.GetAllPersons())
             {
                 Console.WriteLine(resultat,Color.YellowGreen);
-                System.Console.WriteLine("***************************************************************");
+                Console.WriteLine("***************************************************************");
             }
 
             foreach (String res in personHandler.FetchByName("Hlabba")) 
@@ -50,7 +50,7 @@ namespace Övning3
             flamingo.Vikt = 5;
             flamingo.Ålder = 1;
             flamingo.WingSpan = "Yellow";
-            flamingo.Domän = "South Africa";
+            flamingo.Domän = "South ";
             
 
 
@@ -83,9 +83,17 @@ namespace Övning3
             //}
 
 
-            foreach (var resss in animals)
+            foreach (Animal a in animals)
             {
-                Console.WriteLine(resss.ToString());
+              string b= a.Stats();
+               Console.WriteLine(b);
+               a.DoSound();
+                
+                //if(a  is Person)
+                //    {
+                //     (a)WolfMan;
+                //    }
+                
 
             }
 
@@ -94,7 +102,26 @@ namespace Övning3
             //var t = dog.Stats();
             //System.Console.WriteLine(t);
 
-////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+            List<UserError> userErrors = new List<UserError>();
+            NumericInputError numericInputError = new NumericInputError();
+            TextInputError textInputError = new TextInputError();
+            userErrors.Add(numericInputError);
+            userErrors.Add(textInputError);
+
+            foreach(UserError ue in userErrors)
+            {
+                //ue.UEMessage();
+                Console.WriteLine(ue.UEMessage(),Color.RosyBrown);
+
+            }
+
+
+
+
+
             
 
             //Console.WriteLine("Enter person Firstname");

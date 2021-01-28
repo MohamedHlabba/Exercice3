@@ -39,7 +39,7 @@ namespace Övning3
         public string Race { get; set; }
         public override void DoSound()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Haw haw");
         }
         public override string Stats()
         {
@@ -54,7 +54,7 @@ namespace Övning3
         public String Color { get; set; }
         public override void DoSound()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Neigh");
         }
 
         public override string Stats()
@@ -70,7 +70,7 @@ namespace Övning3
         public int NbrOfSpikes { get; set; }
         public override void DoSound()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Oink oink");
         }
 
         public override string Stats()
@@ -86,7 +86,7 @@ namespace Övning3
         public bool IsPoisonous { get; set; }
         public override void DoSound()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Hiss");
         }
 
         public override string Stats()
@@ -101,7 +101,7 @@ namespace Övning3
 
         public override void DoSound()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Tiw Tiw");
         }
         public override string Stats()
         {
@@ -114,7 +114,7 @@ namespace Övning3
         public string Size { get; set; }
         public override void DoSound()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Awooooo");
         }
         public override string Stats()
         {
@@ -130,7 +130,12 @@ namespace Övning3
 
         public override string Stats()
         {
-            return base.Stats()+("Halspåse");
+            return base.Stats()+("Halspåse"+Halspåse);
+        }
+
+        public override void DoSound()
+        {
+            base.DoSound();
         }
 
     }
@@ -143,9 +148,12 @@ namespace Övning3
 
         public override string Stats()
         {
-            return base.Stats()+("Domän :");
+            return base.Stats()+(" Domän :"+Domän);
         }
-
+        public override void DoSound()
+        {
+            base.DoSound();
+        }
     }
 
 
@@ -157,9 +165,12 @@ namespace Övning3
 
         public override string Stats()
         {
-            return base.Stats()+("Family");
+            return base.Stats()+("Family"+Family);
         }
-
+        public override void DoSound()
+        {
+            base.DoSound();
+        }
     }
 
     interface IPerson 

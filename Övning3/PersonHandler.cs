@@ -10,6 +10,8 @@ namespace Övning3
 
       public   List<Person> personers { get; set; }
 
+        public Person person { get; set; }
+
         public PersonHandler()
         {
             personers = new List<Person>();
@@ -52,17 +54,43 @@ namespace Övning3
         public List<String> FetchByName(string lname)
         {
             List<String> res = new List<String>();
-            //List<Person> persons = new List<Person>();
+            
             foreach (Person em in personers)
             {
-                if(em.LName==lname)
-                
+                if (em.LName == lname)
+                {
                     res.Add("[First Name] :" + em.FName + " [last name] : " + em.LName + " [Age] : " + em.Age + " [Height] : " + em.Height + " [Weight] : " + em.Weight);
+
+                }
+              
             }
-           
+
+            if (res.Count == 0)
+            {
+                res.Add("We couldn't find any matchs");
+            }
             return res;
 
         }
+        //public F FetchByLastName(string lname)
+        //{
+          
+        //    List<String> liste = new List<String>(); 
+        //      liste=  GetAllPersons();
+        //   foreach(Person em in personers)
+        //    {
+        //        if (em.LName == lname)
+        //        {
+        //            liste.Add("[First Name] :" + em.FName + " [last name] : " + em.LName + " [Age] : " + em.Age + " [Height] : " + em.Height + " [Weight] : " + em.Weight);
+
+        //        }
+
+        //    }
+        //    return 
+
+
+
+        //}
 
 
 
