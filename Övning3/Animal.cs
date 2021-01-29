@@ -42,11 +42,17 @@ namespace Övning3
 
         public override void DoSound()
         {
-            Console.WriteLine("Haw haw");
+            Console.WriteLine("The dog said : haw haw ! ");
         }
         public override string Stats()
         {
             return base.Stats()+(" Race : " +Race);
+        }
+
+        public string Eat()
+        {
+            return "  "+Namn+ " love to eat : Cooked Chicken and turkey meat. Bacon. Peanut butter";
+
         }
 
         public Dog (string race , string name,int ålder,double vikt):base(name, ålder,  vikt)
@@ -66,7 +72,7 @@ namespace Övning3
         public String Color { get; set; }
         public override void DoSound()
         {
-            Console.WriteLine("Neigh");
+            Console.WriteLine("The horse said : Neigh !");
         }
 
         public override string Stats()
@@ -92,7 +98,7 @@ namespace Övning3
         public int NbrOfSpikes { get; set; }
         public override void DoSound()
         {
-            Console.WriteLine("Oink oink");
+            Console.WriteLine("The Hedgehog said Oink oink");
         }
 
         public override string Stats()
@@ -116,7 +122,7 @@ namespace Övning3
         public bool IsPoisonous { get; set; }
         public override void DoSound()
         {
-            Console.WriteLine("Hiss");
+            Console.WriteLine("The worm said : Hisss !");
         }
 
         public override string Stats()
@@ -141,7 +147,7 @@ namespace Övning3
 
         public override void DoSound()
         {
-            Console.WriteLine("Tiw Tiw");
+            Console.WriteLine("Te bird said :Tiw Tiw");
         }
         public override string Stats()
         {
@@ -163,7 +169,7 @@ namespace Övning3
         public string Size { get; set; }
         public override void DoSound()
         {
-            Console.WriteLine("Awooooo");
+            Console.WriteLine("The wolf said : Awooooo!");
         }
         public override string Stats()
         {
@@ -270,7 +276,7 @@ namespace Övning3
 
     class WolfMan : Wolf, IPerson
     {
-        public string Talk() => "Hello i'm a man"; 
+        public string Talk() => "Hello i'm a man , yes i'm a real person i can talk "; 
        
         public WolfMan(string size,string name,int ålder,double vikt):base(size,name,ålder,vikt)
         {

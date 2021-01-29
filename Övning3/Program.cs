@@ -103,44 +103,53 @@ namespace Övning3
               
                 animal.DoSound();
                 Console.WriteLine("************************************************************");
+                
 
+                //7
                 if (animal is IPerson)
                 {
-                   IPerson person = (IPerson)animal;
-                   Console.WriteLine(person.Talk());
+                   IPerson man = (IPerson)animal;
+                   Console.WriteLine(man.Talk());
                 }
                 
 
             }
-
-            
 
             List<Dog> dogs = new List<Dog>();
-
-            foreach (Animal d in animals)
-            {
-                if (d is Dog)
-                {
-                    dogs.Add(d as Dog);
-                 
-                }
-            }
+            Horse horse = new Horse("Beige", "Bouras", 5, 300);
 
 
-            foreach (Dog d in dogs)
-            {
-              
-              Console.WriteLine(d.Stats());
-                
-            }
-
-
-
-
-            Horse horse = new Horse("Beige","Bouras",5,300);
+            ///9.F Det funkar inte eftersom dog och horse are inte på samma typ.
+            ///10.F För att lösa det här måste listan vara av typ Animal så på så sätt kan vi lagra alla sorter av  djur
             //dogs.Add(horse);
 
-            /// Det funkar inte eftersom dog och horse are inte på samma typ. För att lösa det här måste listan vara av typ Animal så på så sätt kan vi lagra alla sorter av  djur
+
+
+            //foreach (Animal a in animals)
+
+            //{
+            //    if (a is Dog)
+                  
+            //    Console.WriteLine(a.Stats(),Color.Red);
+               
+            //    ////16.Jag kommer inte åt Eat()metoden 17.eftersom den är specifik bara för dogs klass
+            //    //********** Console.WriteLine(a.eat);************
+               
+            //}
+
+            ///18.Ett säkert sätt är att casta animal till dog
+           foreach (Animal a in animals)
+                if (a is Dog)
+                {
+                    Dog dog = (Dog)a;
+                    Console.WriteLine(dog.Stats(), Color.Red);
+                    
+                     Console.WriteLine(dog.Eat());
+               }
+
+
+
+
 
 
 
