@@ -14,7 +14,7 @@ namespace Övning3
 
         public PersonHandler()
         {
-            personers = new List<Person>();
+           personers = new List<Person>();
         }
 
 
@@ -37,7 +37,18 @@ namespace Övning3
             personers.Add(p);
            
             return personers;
-        }  
+        }
+
+       
+
+        public List<Person> DeletePerson(Person p)
+
+        {
+
+            personers.Remove(p);
+
+            return personers;
+        }
 
         public List<String>GetAllPersons()
         {
@@ -51,7 +62,7 @@ namespace Övning3
             }
 
        
-        public List<String> FetchByName(string lname)
+        public List<String> FetchByLastName(string lname)
         {
             List<String> res = new List<String>();
             
@@ -72,27 +83,6 @@ namespace Övning3
             return res;
 
         }
-        //public F FetchByLastName(string lname)
-        //{
-          
-        //    List<String> liste = new List<String>(); 
-        //      liste=  GetAllPersons();
-        //   foreach(Person em in personers)
-        //    {
-        //        if (em.LName == lname)
-        //        {
-        //            liste.Add("[First Name] :" + em.FName + " [last name] : " + em.LName + " [Age] : " + em.Age + " [Height] : " + em.Height + " [Weight] : " + em.Weight);
-
-        //        }
-
-        //    }
-        //    return 
-
-
-
-        //}
-
-
 
 
     }

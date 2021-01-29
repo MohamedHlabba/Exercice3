@@ -13,114 +13,175 @@ namespace Övning3
            //Person p = new Person();
            PersonHandler personHandler = new PersonHandler();
 
-           var p1 =personHandler.CreatePerson(31,"Mohamed","Hlabba",178,82);
-           var p2=  personHandler.CreatePerson(25,"Amine","Berkk",180,90);
-           var p3=  personHandler.CreatePerson(63, "Sihem", "Darine", 190, 90);
-            
-            personHandler.SavePerson(p1);
-            personHandler.SavePerson(p2);
-            personHandler.SavePerson(p3);
-            personHandler.GetAllPersons();
 
-            foreach (String resultat in personHandler.GetAllPersons())
+            try
             {
-                Console.WriteLine(resultat,Color.YellowGreen);
-                Console.WriteLine("***************************************************************");
+
+                var p1 = personHandler.CreatePerson(31, "Mohamed", "Hlabba", 178, 82);
+                var p2 = personHandler.CreatePerson(25, "Amine", "Berkk", 180, 90);
+                var p3 = personHandler.CreatePerson(63, "Sihem", "Darine", 190, 90);
+                var p4 = personHandler.CreatePerson(70, "Mary", "kevinn", 166, 75);
+
+                var p5 = personHandler.CreatePerson(20, "George", "Magnum", 192, 99);
+                personHandler.SetAge(p5, 28);
+                personHandler.SavePerson(p1);
+                personHandler.SavePerson(p2);
+                personHandler.SavePerson(p3);
+                personHandler.SavePerson(p4);
+                personHandler.SavePerson(p5);
+
+
+                personHandler.DeletePerson(p2);
+
+
             }
 
-            foreach (String res in personHandler.FetchByName("Hlabba")) 
+            catch (Exception exception)
             {
-               
-                Console.WriteLine(res);
+
+                Console.WriteLine("Message:" + exception.Message, Color.Red);
+                Console.WriteLine("Stack Trace" + exception.StackTrace);
             }
-            //////////////////////////////////////////////////////////////////////
 
 
+            finally
+            {
+
+
+                foreach (String resultat in personHandler.GetAllPersons())
+                {
+                    Console.WriteLine(resultat, Color.YellowGreen);
+                    Console.WriteLine("***************************************************************");
+                }
+
+                foreach (String res in personHandler.FetchByLastName("Darine"))
+                {
+
+                    Console.WriteLine(res);
+                    Console.WriteLine("***************************************************************");
+                }
+
+
+            } 
+
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             List<Animal> animals = new List<Animal>();
 
-            Bird bird = new Bird();
-            bird.Namn = "Canarrii";
-            bird.Vikt =0.004 ;
-            bird.Ålder = 1;
-            bird.WingSpan = " grå wingspan";
+            Bird bird = new Bird(" grå wingspan", "Canarrii",1,0.004);
+           
 
-            Flamingo flamingo = new Flamingo();
-            flamingo.Namn = "";
-            flamingo.Vikt = 5;
-            flamingo.Ålder = 1;
-            flamingo.WingSpan = "Yellow";
-            flamingo.Domän = "South ";
+            Flamingo flamingo = new Flamingo("South Africa", "Yellow", "flamingoos", 1, 5);
+           
             
 
 
 
-            Wolf wolf = new Wolf();
-            wolf.Namn = "Lobbo";
-            wolf.Vikt = 70;
-            wolf.Ålder = 3;
-            wolf.Size = "Big";
+            Wolf wolf = new Wolf("Big","Lobbo",3,70);
+         
             
-            Dog dog = new Dog();
-            dog.Race= "Labrador";
-            dog.Namn="Layka";
-            dog.Vikt = 35;
-            dog.Ålder = 2;
+            Dog dog1 = new Dog("Labrador","Layka",2,35);
+            Dog dog2 = new Dog("Chiwawa", "Luna", 1,3);
+            Dog dog3 = new Dog("Husky","Beau",3,28);
 
-            animals.Add(dog);
+
+            animals.Add(dog1);
+            animals.Add(dog2);
+            animals.Add(dog3);
             animals.Add(wolf);
             animals.Add(flamingo);
             animals.Add(bird);
+            
 
-            //public List<String> affichemplyee()
-            //{
-            //    List<String> result = new List<String>();
-            //    foreach (Employe em in employes)
-            //    {
-            //        result.Add("employe name " + em.name + " employee salary : " + em.Salary);
-            //    }
-            //    return result;
-            //}
+            WolfMan wolfman = new WolfMan("Big","The wolfman",5,100); 
+            animals.Add(wolfman);
 
-
-            foreach (Animal a in animals)
+            foreach (Animal animal in animals)
             {
-              string b= a.Stats();
-               Console.WriteLine(b);
-               a.DoSound();
-                
-                //if(a  is Person)
-                //    {
-                //     (a)WolfMan;
-                //    }
+              string b= animal.Stats();
+               Console.WriteLine(b,Color.Cyan);
+              
+                animal.DoSound();
+                Console.WriteLine("************************************************************");
+
+                if (animal is IPerson)
+                {
+                   IPerson person = (IPerson)animal;
+                   Console.WriteLine(person.Talk());
+                }
                 
 
             }
 
+            
+
+            List<Dog> dogs = new List<Dog>();
+
+            foreach (Animal d in animals)
+            {
+                if (d is Dog)
+                {
+                    dogs.Add(d as Dog);
+                 
+                }
+            }
 
 
-            //var t = dog.Stats();
-            //System.Console.WriteLine(t);
+            foreach (Dog d in dogs)
+            {
+              
+              Console.WriteLine(d.Stats());
+                
+            }
 
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+            Horse horse = new Horse("Beige","Bouras",5,300);
+            //dogs.Add(horse);
+
+            /// Det funkar inte eftersom dog och horse are inte på samma typ. För att lösa det här måste listan vara av typ Animal så på så sätt kan vi lagra alla sorter av  djur
+
+
+
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
             List<UserError> userErrors = new List<UserError>();
+
             NumericInputError numericInputError = new NumericInputError();
             TextInputError textInputError = new TextInputError();
+
+            MyfirstClass class1 = new MyfirstClass();
+            MySecondClass class2 = new MySecondClass();
+            MyThirdClass class3 = new MyThirdClass();
+
+
             userErrors.Add(numericInputError);
             userErrors.Add(textInputError);
+            
+            
+            userErrors.Add(class1);
+            userErrors.Add(class2);
+            userErrors.Add(class3);
+
 
             foreach(UserError ue in userErrors)
             {
-                //ue.UEMessage();
+               
                 Console.WriteLine(ue.UEMessage(),Color.RosyBrown);
 
             }
+            
+            
+
+
+            
 
 
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             
 

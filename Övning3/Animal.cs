@@ -21,13 +21,15 @@ namespace Övning3
         public virtual string Stats()
         {
        
-            return ("Name " +Namn+ " Vikt "+Vikt +" Ålder " +Ålder);
+            return ("Name : " +Namn + " Vikt : " +Vikt + " Ålder :" +Ålder);
         }
 
         
-        public Animal()
+        public Animal(string name,int ålder,double vikt)
         {
-
+            Namn = name;
+            Ålder = ålder;
+            Vikt=vikt;
         }
 
     }
@@ -37,13 +39,23 @@ namespace Övning3
 
         private string race;
         public string Race { get; set; }
+
         public override void DoSound()
         {
             Console.WriteLine("Haw haw");
         }
         public override string Stats()
         {
-            return base.Stats()+(" Race " +Race);
+            return base.Stats()+(" Race : " +Race);
+        }
+
+        public Dog (string race , string name,int ålder,double vikt):base(name, ålder,  vikt)
+        {
+            Race = race;
+            Namn = name;
+            Ålder = ålder;
+            Vikt = vikt;
+            
         }
     }
 
@@ -59,7 +71,17 @@ namespace Övning3
 
         public override string Stats()
         {
-            return base.Stats()+("Color"+Color);
+            return base.Stats()+("Color : "+Color);
+        }
+
+        public Horse(string color,string name,int ålder,double vikt):base(name, ålder, vikt)
+        {
+            Color = color;
+            Namn = name;
+            Ålder = ålder;
+            Vikt = vikt;
+
+
         }
     }
 
@@ -75,7 +97,15 @@ namespace Övning3
 
         public override string Stats()
         {
-            return base.Stats()+("NbrOfSpikes : "+NbrOfSpikes);
+            return base.Stats()+("NbrOfSpikes : " +NbrOfSpikes);
+        }
+
+        public  Hedgehog(int nbrofspikes,string name,int ålder,double vikt):base(name,ålder,vikt)
+        {
+            NbrOfSpikes = nbrofspikes;
+            Namn = name;
+            Ålder = ålder;
+            Vikt = vikt;
         }
     }
 
@@ -91,8 +121,18 @@ namespace Övning3
 
         public override string Stats()
         {
-            return base.Stats()+("IsPoisonous"+IsPoisonous);
+            return base.Stats()+("IsPoisonous :" +IsPoisonous);
         }
+
+        public Worm(bool ispoisonous,string name, int ålder,double vikt):base (name,ålder,vikt)
+        {
+            IsPoisonous = ispoisonous;
+            Namn = name;
+            Ålder = ålder;
+            Vikt = vikt;
+
+        }
+
     }
     class Bird : Animal
     {
@@ -105,7 +145,16 @@ namespace Övning3
         }
         public override string Stats()
         {
-            return base.Stats()+("WingSpan : "+WingSpan);
+            return base.Stats()+("WingSpan : " +WingSpan);
+        }
+
+        public Bird(string wingspan ,string name, int ålder, double vikt) :base(name,ålder,vikt)
+        {
+            WingSpan = wingspan;
+            Namn = name;
+            Ålder = ålder;
+            Vikt = vikt;
+
         }
     }
     class Wolf : Animal
@@ -118,7 +167,15 @@ namespace Övning3
         }
         public override string Stats()
         {
-            return base.Stats()+(" Size"+Size);
+            return base.Stats()+(" Size : " +Size);
+        }
+        public Wolf(string size,string name,int ålder,double vikt):base(name,ålder,vikt)
+        {
+            Size = size;
+            Namn = name;
+            Ålder = ålder;
+
+
         }
     }
 
@@ -130,12 +187,22 @@ namespace Övning3
 
         public override string Stats()
         {
-            return base.Stats()+("Halspåse"+Halspåse);
+            return base.Stats()+("Halspåse : "+Halspåse);
         }
 
         public override void DoSound()
         {
             base.DoSound();
+        }
+
+        public Pelican(string halspåse,string wingspan,string name,int ålder,double vikt):base(wingspan,name,ålder,vikt)
+        {
+            Halspåse = halspåse;
+            WingSpan = wingspan;
+            Namn = name;
+            Ålder = ålder;
+            Vikt = vikt;
+
         }
 
     }
@@ -148,11 +215,20 @@ namespace Övning3
 
         public override string Stats()
         {
-            return base.Stats()+(" Domän :"+Domän);
+            return base.Stats()+(" Domän :" +Domän);
         }
         public override void DoSound()
         {
             base.DoSound();
+        }
+        public Flamingo(string domän, string wingspan, string name, int ålder, double vikt) : base(wingspan, name, ålder, vikt)
+
+        {
+            Domän = domän;
+            WingSpan = wingspan;
+            Namn = name;
+            Ålder = ålder;
+            Vikt = vikt;
         }
     }
 
@@ -165,18 +241,27 @@ namespace Övning3
 
         public override string Stats()
         {
-            return base.Stats()+("Family"+Family);
+            return base.Stats()+("Family: "+Family);
         }
         public override void DoSound()
         {
             base.DoSound();
+        }
+        public Swan(string family ,string wingspan, string name, int ålder, double vikt) : base(wingspan, name, ålder, vikt)
+
+        {
+            Family = family;
+            WingSpan = wingspan;
+            Namn = name;
+            Ålder = ålder;
+            Vikt = vikt;
         }
     }
 
     interface IPerson 
     {
 
-        void Talk();
+        string Talk();
         
    
     
@@ -185,18 +270,23 @@ namespace Övning3
 
     class WolfMan : Wolf, IPerson
     {
-        public void Talk()
+        public string Talk() => "Hello i'm a man"; 
+       
+        public WolfMan(string size,string name,int ålder,double vikt):base(size,name,ålder,vikt)
         {
-            Console.WriteLine(" waaaaaaa");
+            Size = size;
+            Namn = name;
+            Ålder = ålder;
+            Vikt = vikt;
+
         }
-        
     }
 
-    //13. Om vi under utvecklingen kommer fram till att samtliga fåglar behöver ett nytt attribut, ivilken klass bör vi lägga det?
-    // vi bör lägga det nya attribut i Bird klass
+    //13.F: Om vi under utvecklingen kommer fram till att samtliga fåglar behöver ett nytt attribut, i vilken klass bör vi lägga det?
+    // vi bör lägga det nya attribut i Bird(Fåglar) klass
 
     //14.F: Om alla djur behöver det nya attributet, vart skulle man lägga det då?
-    //I djur klassen
+    //I djur klassen(Animal)
 }
 
 

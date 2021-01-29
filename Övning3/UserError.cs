@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Övning3
 {
-  abstract  class  UserError
+    abstract class UserError
     {
 
-       public  abstract string UEMessage();
+        public abstract string UEMessage();
 
 
     }
@@ -16,9 +16,9 @@ namespace Övning3
     {
         public override string UEMessage()
         {
-            string message ="you tried to use a numeric input in a text only field.This fired an error !";
+            string message = "you tried to use a numeric input in a text only field.This fired an error !";
             return message;
-        } 
+        }
     }
 
     class TextInputError : UserError
@@ -35,7 +35,7 @@ namespace Övning3
     {
         public override string UEMessage()
         {
-            string message = "You tried to";
+            string message = "Test for UMessage class 1";
             return message;
         }
     }
@@ -46,7 +46,7 @@ namespace Övning3
     {
         public override string UEMessage()
         {
-            string message = "";
+            string message = "Hello this is a test for class2";
             return message;
         }
     }
@@ -54,7 +54,9 @@ namespace Övning3
     {
         public override string UEMessage()
         {
-            throw new NotImplementedException();
+            string message = "Hello this is a test for class 3";
+            return message;
         }
     }
+
 }
