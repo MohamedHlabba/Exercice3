@@ -201,42 +201,10 @@ namespace Övning3
 
 
 
-            //Console.WriteLine("Enter person Firstname");
-            // var name =Console.ReadLine();
-            //Console.WriteLine("Enter person lastname ");
-            //var lstname = Console.ReadLine();
-            //personHandler.CreatePerson(30,"ahmed","aymen",177,81);
-
-            // personHandler.FetchByName("aymen");
 
 
 
 
-
-            // var p = personHandler.CreatePerson(23,"Nermine","faaa",165,65);
-
-
-
-
-            //try
-            //{
-            //    personHandler.SetAge(p, 0);
-            //    p.LName = "";
-            //    p.FName = "M";
-            //    p.Age = 0;
-
-
-            //Console.WriteLine("First name is : " + p.FName + " Last name is : " + p.LName + " and Age is : " + p.Age);
-
-            //}
-            //catch (Exception exception)
-            //{
-            //    Console.WriteLine("Message:" + exception.Message, Color.Red);
-            //    Console.WriteLine("Stack Trace" + exception.StackTrace);
-
-            //}
-
-            //Console.Read();
 
         }
     }
