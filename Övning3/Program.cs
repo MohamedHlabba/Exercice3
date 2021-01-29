@@ -182,17 +182,24 @@ namespace Övning3
                 Console.WriteLine(ue.UEMessage(),Color.RosyBrown);
 
             }
-            
-            
 
 
-            
+            //11.F polymorfism.
+            //Polymorfism anses vara en av de viktigaste funktionerna i Objektorienterad programmering.
+
+
+            //12.F Polymorfism hjälper programmerare att återanvända koden och klasserna när de skrivits, testats och implementerats. De kan återanvändas på många sätt.
+            //Sparar mycket tid. Enstaka variabler kan användas för att lagra flera datatyper. Lätt att felsöka koder.
+
+            //13.F Abstrakt Klass innehåller konstruktor , Den kan innehålla olika typer av access modifier som public, privata, protected.En klass kan bara använda en abstrakt klass.Abstrakt klass kan innehålla metoder, fält, konstanter etc.
+            //Medan Interface innehåller inte konstruktor,den innehåller endast modifierare för allmän åtkomst (Public)  eftersom allt i gränssnittet är offentligt (Public),en klass kan använda flera gränssnitt.Gränssnittet kan bara innehålla metoder
 
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
             //Console.WriteLine("Enter person Firstname");
             // var name =Console.ReadLine();
